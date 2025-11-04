@@ -1,0 +1,152 @@
+@import './styles/variables.css';
+@import './assets/fonts/fonts.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+  background-color: #0a0a0a;
+  color: var(--primary-white);
+  overflow-x: hidden;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  position: relative;
+}
+
+/* Global background design */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(ellipse 800px 1200px at 20% 30%, rgba(var(--mox-pink-rgb), 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 1000px 800px at 80% 70%, rgba(var(--mox-pink-rgb), 0.06) 0%, transparent 50%),
+    linear-gradient(180deg, rgba(var(--mox-pink-rgb), 0.02) 0%, rgba(var(--mox-pink-rgb), 0.03) 50%, rgba(var(--mox-pink-rgb), 0.02) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Animated gradient orbs */
+body::after {
+  content: "";
+  position: fixed;
+  width: 800px;
+  height: 800px;
+  top: -400px;
+  right: -400px;
+  background: radial-gradient(circle, rgba(var(--mox-pink-rgb), 0.07) 0%, transparent 70%);
+  animation: floatOrb 20s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Secondary animated orb */
+.App::before {
+  content: "";
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  bottom: -300px;
+  left: -300px;
+  background: radial-gradient(circle, rgba(var(--mox-pink-rgb), 0.05) 0%, transparent 70%);
+  animation: floatOrb2 25s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes floatOrb {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-100px, 100px) scale(1.1);
+  }
+}
+
+@keyframes floatOrb2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(100px, -100px) scale(1.2);
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+:root {
+  --primary-black: #000000;
+  --primary-white: #ffffff;
+  --mox-pink: #ee4f91;
+  --mox-pink-rgb: 238, 79, 145;
+  --primary-purple: var(--mox-pink);
+  --secondary-purple: #e63c7f;
+  --dark-purple: #d42a6d;
+  --light-purple: #f57aad;
+  --gradient-purple: linear-gradient(135deg, var(--mox-pink) 0%, var(--secondary-purple) 100%);
+}
+
+/* Ensure all content appears above background */
+.App {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+
+/* Subtle mesh gradient for continuity */
+.App::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(45deg, transparent, transparent 250px, rgba(var(--mox-pink-rgb), 0.008) 250px, rgba(var(--mox-pink-rgb), 0.008) 500px),
+    repeating-linear-gradient(-45deg, transparent, transparent 250px, rgba(var(--mox-pink-rgb), 0.008) 250px, rgba(var(--mox-pink-rgb), 0.008) 500px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(238, 79, 145, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(238, 79, 145, 0.3);
+  border-radius: 1px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(238, 79, 145, 0.5);
+}

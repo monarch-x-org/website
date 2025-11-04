@@ -1,0 +1,48 @@
+/* Global CSS Variables */
+:root {
+  /* Colors */
+  --primary-black: #0a0a0a;
+  --primary-white: #ffffff;
+  --mox-pink: #ee4f91;
+  --primary-purple: var(--mox-pink);
+  --secondary-purple: #e63c7f;
+  --dark-purple: #d42a6d;
+  --light-purple: #f57aad;
+  
+  /* Gradients */
+  --gradient-purple: linear-gradient(135deg, var(--mox-pink) 0%, var(--secondary-purple) 100%);
+  --gradient-dark: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+  --spacing-2xl: 8rem;
+  
+  /* Typography */
+  --font-primary: "Reload", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 800;
+  
+  /* Breakpoints */
+  --breakpoint-mobile: 480px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
+  --breakpoint-wide: 1400px;
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 500ms ease;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.2);
+  --shadow-purple: 0 10px 30px rgba(139, 92, 246, 0.3);
+}

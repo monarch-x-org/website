@@ -1,0 +1,325 @@
+.teams {
+  min-height: 100vh;
+  padding: 6rem 0 4rem;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.teams::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(var(--mox-pink-rgb), 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.teams-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4rem;
+  position: relative;
+}
+
+/* Back button */
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: var(--mox-pink);
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-bottom: 3rem;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  transform: translateX(-5px);
+  color: var(--primary-white);
+}
+
+.back-button span {
+  font-size: 1.2rem;
+}
+
+/* Player carousel */
+.player-carousel {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 6rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+/* Player info */
+.player-info {
+  position: relative;
+}
+
+.player-role {
+  color: var(--mox-pink);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.player-name {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.player-ign {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--primary-white);
+  margin-bottom: 2rem;
+  letter-spacing: -2px;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.player-bio {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+.player-socials {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.player-socials .social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(var(--mox-pink-rgb), 0.1);
+  border: 1px solid rgba(var(--mox-pink-rgb), 0.3);
+  border-radius: 4px;
+  color: var(--primary-white);
+  transition: all 0.3s ease;
+}
+
+.player-socials .social-link:hover {
+  background: var(--mox-pink);
+  border-color: var(--mox-pink);
+  transform: translateY(-2px);
+}
+
+/* Player images */
+.player-images {
+  position: relative;
+}
+
+.player-main-image {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 500px;
+  background: rgba(var(--mox-pink-rgb), 0.05);
+  border: 2px solid rgba(var(--mox-pink-rgb), 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player-main-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(var(--mox-pink-rgb), 0.1) 100%);
+  pointer-events: none;
+}
+
+.player-avatar {
+  position: relative;
+  z-index: 1;
+}
+
+/* Thumbnails */
+.player-thumbnails {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.thumbnail {
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  width: 120px;
+}
+
+.thumbnail:hover {
+  border-color: rgba(var(--mox-pink-rgb), 0.5);
+  transform: translateY(-5px);
+}
+
+.thumbnail.active {
+  border-color: var(--mox-pink);
+  background: rgba(var(--mox-pink-rgb), 0.1);
+}
+
+.thumbnail-content {
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.thumbnail-label {
+  font-size: 0.7rem;
+  color: var(--mox-pink);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.thumbnail-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+}
+
+/* Navigation */
+.player-info .player-navigation {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 3rem;
+  margin: 0;
+}
+
+.player-counter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-primary);
+}
+
+.player-counter .current {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--mox-pink);
+}
+
+.player-counter .divider {
+  width: 40px;
+  height: 2px;
+  background: rgba(var(--mox-pink-rgb), 0.3);
+}
+
+.player-counter .total {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.nav-arrows {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-arrow {
+  width: 50px;
+  height: 50px;
+  background: rgba(var(--mox-pink-rgb), 0.1);
+  border: 2px solid rgba(var(--mox-pink-rgb), 0.3);
+  border-radius: 4px;
+  color: var(--primary-white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.nav-arrow:hover {
+  background: var(--mox-pink);
+  border-color: var(--mox-pink);
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .player-carousel {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  
+  .player-info {
+    text-align: center;
+  }
+  
+  .player-bio {
+    margin: 0 auto 2rem;
+  }
+  
+  .player-socials {
+    justify-content: center;
+  }
+  
+  .player-main-image {
+    margin: 0 auto 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .teams-container {
+    padding: 0 1.5rem;
+  }
+  
+  .player-ign {
+    font-size: 3rem;
+  }
+  
+  .player-main-image {
+    height: 400px;
+  }
+  
+  .player-thumbnails {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .thumbnail {
+    width: 100px;
+  }
+  
+  .player-info .player-navigation {
+    justify-content: center;
+    gap: 2rem;
+  }
+}

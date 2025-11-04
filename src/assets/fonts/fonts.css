@@ -1,0 +1,13 @@
+/* Custom Font Definitions */
+
+@font-face {
+  font-family: 'Reload';
+  src: url('./ReloadMedium.woff2') format('woff2'),
+       url('./ReloadMedium.woff') format('woff'),
+       url('./ReloadMedium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Reload font is now loaded and ready to use */

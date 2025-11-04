@@ -1,0 +1,251 @@
+.team-selection {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+.team-selection-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-white);
+  margin-bottom: 4rem;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.team-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  max-width: 800px;
+  width: 100%;
+}
+
+.team-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 400px;
+}
+
+.team-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.team-card:hover::before {
+  opacity: 1;
+}
+
+.ekko-card {
+  border-color: rgba(var(--mox-pink-rgb), 0.3);
+}
+
+.ekko-card:hover {
+  border-color: var(--mox-pink);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(var(--mox-pink-rgb), 0.2);
+}
+
+.mox-card {
+  border-color: rgba(var(--mox-pink-rgb), 0.3);
+}
+
+.mox-card:hover {
+  border-color: var(--mox-pink);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(var(--mox-pink-rgb), 0.2);
+}
+
+.team-card-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.team-card-inner {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1;
+}
+
+.team-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.ekko-card .team-name {
+  color: var(--mox-pink);
+}
+
+.mox-card .team-name {
+  color: var(--mox-pink);
+}
+
+.team-logo {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+
+.team-card:hover .team-logo-img {
+  opacity: 1;
+}
+
+.logo-placeholder {
+  font-size: 3rem;
+  font-weight: 700;
+  opacity: 0.2;
+  letter-spacing: 2px;
+}
+
+/* Custom EKKO text logo */
+.ekko-text-logo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ekko-text-logo span {
+  font-size: 4.5rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  font-family: var(--font-primary);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.team-card:hover .ekko-text-logo span {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Add a subtle effect to EKKO text */
+.ekko-text-logo span::after {
+  content: 'EKKO';
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--mox-pink);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  transform: translate(2px, 2px);
+}
+
+.team-card:hover .ekko-text-logo span::after {
+  opacity: 0.3;
+}
+
+.team-description {
+  margin-top: auto;
+}
+
+.team-description p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.team-card-hover {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover .team-card-hover {
+  transform: translateY(0);
+}
+
+.team-card-hover span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--primary-white);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .team-cards {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 400px;
+  }
+
+  .team-card {
+    min-height: 350px;
+  }
+
+  .team-selection-title {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .team-name {
+    font-size: 2rem;
+  }
+
+  .team-logo {
+    width: 150px;
+    height: 150px;
+  }
+
+  .team-logo-img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .logo-placeholder {
+    font-size: 2.5rem;
+  }
+
+  .ekko-text-logo span {
+    font-size: 3rem;
+  }
+}

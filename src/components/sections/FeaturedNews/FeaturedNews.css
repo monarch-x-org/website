@@ -1,0 +1,270 @@
+.featured-news {
+  min-height: 100vh;
+  background: transparent;
+  padding: 8rem 0 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+.section-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 3rem;
+  font-family: var(--font-primary);
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 2rem;
+  height: 600px;
+}
+
+.featured-main {
+  height: 100%;
+}
+
+.featured-article {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.featured-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.featured-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.featured-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.featured-placeholder .icon {
+  font-size: 4rem;
+  opacity: 0.5;
+}
+
+.featured-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 3rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 50%, transparent 100%);
+}
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.article-date {
+  color: var(--mox-pink);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.featured-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-primary);
+  max-width: 90%;
+}
+
+.read-more-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+  padding: 0;
+}
+
+.read-more-btn:hover {
+  color: var(--mox-pink);
+}
+
+.read-more-btn .arrow {
+  transition: transform 0.3s ease;
+}
+
+.read-more-btn:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* Sidebar */
+.featured-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 100%;
+}
+
+.side-article {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  overflow: hidden;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+.side-article:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.side-article-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.side-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.side-placeholder .icon {
+  font-size: 2rem;
+  opacity: 0.5;
+}
+
+.side-article-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem 2rem 1.5rem 0;
+}
+
+.side-article-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-primary);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.side-article-date {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  
+  .featured-article {
+    height: 500px;
+    margin-bottom: 2rem;
+  }
+  
+  .featured-sidebar {
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  .side-article {
+    grid-template-columns: 1fr;
+    height: 300px;
+  }
+  
+  .side-article-image {
+    height: 200px;
+  }
+  
+  .side-article-content {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .featured-container {
+    padding: 0 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .featured-article {
+    height: 400px;
+  }
+  
+  .featured-content {
+    padding: 2rem;
+  }
+  
+  .featured-title {
+    font-size: 1.25rem;
+  }
+  
+  .featured-sidebar {
+    grid-template-columns: 1fr;
+  }
+  
+  .side-article {
+    height: auto;
+    grid-template-columns: 120px 1fr;
+  }
+  
+  .side-article-image {
+    height: 100px;
+  }
+}
